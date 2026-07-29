@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dahqdesodguxv"]
+
+[ext_resource type="PackedScene" uid="uid://rmgph6owqvag" path="res://Scenes/list_element.tscn" id="1_jjgbg"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=192881669]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=123970731]
+anchors_preset = -1
+anchor_left = 0.86100006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.12792969
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=824395015]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=243370929 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer2" parent="ScrollContainer/VBoxContainer" unique_id=899540279 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer3" parent="ScrollContainer/VBoxContainer" unique_id=1458302244 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer4" parent="ScrollContainer/VBoxContainer" unique_id=594403931 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer5" parent="ScrollContainer/VBoxContainer" unique_id=1282610121 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer6" parent="ScrollContainer/VBoxContainer" unique_id=485988673 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer7" parent="ScrollContainer/VBoxContainer" unique_id=1888711595 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer8" parent="ScrollContainer/VBoxContainer" unique_id=418245844 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer9" parent="ScrollContainer/VBoxContainer" unique_id=1426931097 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer10" parent="ScrollContainer/VBoxContainer" unique_id=1705123098 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer11" parent="ScrollContainer/VBoxContainer" unique_id=6268301 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer12" parent="ScrollContainer/VBoxContainer" unique_id=2132478208 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer13" parent="ScrollContainer/VBoxContainer" unique_id=143317804 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer14" parent="ScrollContainer/VBoxContainer" unique_id=379147272 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer15" parent="ScrollContainer/VBoxContainer" unique_id=1658736789 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer16" parent="ScrollContainer/VBoxContainer" unique_id=1406357652 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer17" parent="ScrollContainer/VBoxContainer" unique_id=946394123 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer18" parent="ScrollContainer/VBoxContainer" unique_id=929822041 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer19" parent="ScrollContainer/VBoxContainer" unique_id=198448376 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer20" parent="ScrollContainer/VBoxContainer" unique_id=1922983109 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer21" parent="ScrollContainer/VBoxContainer" unique_id=420763199 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer22" parent="ScrollContainer/VBoxContainer" unique_id=621434226 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer23" parent="ScrollContainer/VBoxContainer" unique_id=688884011 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer24" parent="ScrollContainer/VBoxContainer" unique_id=1639426758 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer25" parent="ScrollContainer/VBoxContainer" unique_id=1237842101 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer26" parent="ScrollContainer/VBoxContainer" unique_id=781056872 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer27" parent="ScrollContainer/VBoxContainer" unique_id=1850860370 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer28" parent="ScrollContainer/VBoxContainer" unique_id=977287142 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer29" parent="ScrollContainer/VBoxContainer" unique_id=1042695555 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer30" parent="ScrollContainer/VBoxContainer" unique_id=212353585 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer31" parent="ScrollContainer/VBoxContainer" unique_id=471242411 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+
+[node name="HBoxContainer32" parent="ScrollContainer/VBoxContainer" unique_id=1371590330 instance=ExtResource("1_jjgbg")]
+layout_mode = 2

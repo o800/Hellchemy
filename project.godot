@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Hellchemy"
+run/main_scene="uid://dahqdesodguxv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +23,13 @@ project/assembly_name="Hellchemy"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "red",
+"res://Scripts/": "green"
+}
 
 [physics]
 

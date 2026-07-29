@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cefgkbip41oym"]
+
+[ext_resource type="Texture2D" uid="uid://prympnd0c17m" path="res://icon.svg" id="1_ys0gr"]
+
+[node name="Item" type="TextureRect" unique_id=1671509447]
+anchors_preset = -1
+anchor_right = 0.11100001
+anchor_bottom = 0.19800001
+offset_right = -87.87201
+offset_bottom = -88.304016
+texture = ExtResource("1_ys0gr")
