@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
+		move_to_front()
 		drag_offset = global_position - get_global_mouse_position()
 		move = true
 	if event.is_action_released("click"):
