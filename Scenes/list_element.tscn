@@ -5,10 +5,10 @@
 
 [node name="Button" type="Button" unique_id=1611317925]
 anchors_preset = -1
-anchor_right = 0.072000004
-anchor_bottom = 0.037
-offset_right = 0.055992126
-offset_bottom = 0.024000168
+anchor_right = 0.16700001
+anchor_bottom = 0.123
+offset_right = -0.38401794
+offset_bottom = 0.29599762
 script = ExtResource("1_djpnx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=243370929]
@@ -26,6 +26,6 @@ expand_mode = 3
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1198742316]
 layout_mode = 2
-text = "Helium"
+text = "Lithium"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
