@@ -15,23 +15,21 @@ var drag_offset = Vector2.ZERO
 func _process(delta: float) -> void:
 	if button_pressed or (first and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		global_position = get_global_mouse_position() + drag_offset
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and first:
 		first = false
 		check_overlapping()
 
 
 		
 func check_overlapping():
-	pass
-	#if len(self.get_parent().get_children()) == 1:
-		#return
-	#for item: Button in self.get_parent():
-		#if item == self:
-			#continue
-		#var rect1 = item.get_rect()
-		#var rect2 = get_rect()
-		#if rect1.intersects(rect2):
-			#print("INTERSECTING")
+	for item: Button in self.get_parent().get_children():
+		if item == self:
+			continue
+		var rect1 = item.get_global_rect()
+		var rect2 = get_global_rect()
+		print("Rect 2: ", rect2, "\nRect1", rect1)
+		if rect1.intersects(rect2):
+			print("INTERSECTING")
 	
 func _on_button_up() -> void:
 	first = false
