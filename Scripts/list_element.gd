@@ -6,6 +6,8 @@ extends Button
 @export var item_name = "Milk"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if item_name == "":
+		queue_free()
 	#$HBoxContainer.pre_sort_children.connect(func():
 		#var font: Font = $HBoxContainer/Label.get_theme_font("font")
 		#var font_size = floor($HBoxContainer/Label.size.y)
@@ -21,7 +23,7 @@ func _ready() -> void:
 		#$HBoxContainer/Label.add_theme_font_size_override("font_size", font_size)
 		#$HBoxContainer.fit_child_in_rect($HBoxContainer/Label, Rect2(Vector2.ZERO, $HBoxContainer.size))
 	#)
-	$HBoxContainer/Label.text = "Milk"
+	$HBoxContainer/Label.text = item_name
 	$HBoxContainer/TextureRect.texture = load("res://Assets/ItemImages/" + item_name.to_lower() + ".jpg")
 
 
@@ -37,5 +39,5 @@ func _process(delta: float) -> void:
 
 func _on_button_down() -> void:
 	var item = item_scene.instantiate()
-	item.item_name = "Milk"
+	item.item_name = item_name
 	$"../../../Items".add_child(item)

@@ -5,7 +5,8 @@ var first = true
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$TextureRect.texture = load("res://Assets/ItemImages/" + item_name.to_lower() + ".jpg")
+	var x = load("res://Asss/" + item_name.to_lower() + ".jpg")
+	print(x)
 	global_position = get_global_mouse_position()
 	$Label.text = item_name
 
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and first:
 		first = false
 		check_overlapping()
+		
 
 
 		
