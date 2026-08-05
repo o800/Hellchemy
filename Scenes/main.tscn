@@ -111,3 +111,9 @@ layout_mode = 2
 
 [node name="HBoxContainer32" parent="ScrollContainer/VBoxContainer" unique_id=1371590330 instance=ExtResource("1_jjgbg")]
 layout_mode = 2
+
+[node name="Items" type="Control" parent="." unique_id=974746229]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
