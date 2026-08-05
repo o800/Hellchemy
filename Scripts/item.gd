@@ -21,7 +21,8 @@ func _process(delta: float) -> void:
 
 
 		
-#func check_overlapping():
+func check_overlapping():
+	pass
 	#if len(self.get_parent().get_children()) == 1:
 		#return
 	#for item: Button in self.get_parent():
