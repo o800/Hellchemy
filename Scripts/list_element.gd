@@ -31,12 +31,11 @@ func _process(delta: float) -> void:
 
 
 
-func _on_pressed() -> void:
+	
+	
+
+
+func _on_button_down() -> void:
 	var item = item_scene.instantiate()
 	item.item_name = "Milk"
-<<<<<<< Updated upstream
-	$"../../../".add_child(item)
-	
-=======
 	$"../../../Items".add_child(item)
->>>>>>> Stashed changes
