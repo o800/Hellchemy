@@ -21,16 +21,16 @@ func _process(delta: float) -> void:
 
 
 		
-func check_overlapping():
-	if len(self.get_parent().get_children()) == 1:
-		return
-	for item: Button in self.get_parent():
-		if item == self:
-			continue
-		var rect1 = item.get_rect()
-		var rect2 = get_rect()
-		if rect1.intersects(rect2):
-			print("INTERSECTING")
+#func check_overlapping():
+	#if len(self.get_parent().get_children()) == 1:
+		#return
+	#for item: Button in self.get_parent():
+		#if item == self:
+			#continue
+		#var rect1 = item.get_rect()
+		#var rect2 = get_rect()
+		#if rect1.intersects(rect2):
+			#print("INTERSECTING")
 	
 func _on_button_up() -> void:
 	first = false
