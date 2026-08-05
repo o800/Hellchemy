@@ -9,8 +9,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-	
-func combine(item1: String, item2: String):
+
+#The return type of Variant is being used as an option here. 
+func combine(item1: String, item2: String) -> Variant:
 	if item2 < item1:
 		var tmp = item2
 		item2 = item1
