@@ -1,6 +1,7 @@
-extends Control
+extends Button
 
-var move = true
+var first = true
+
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,18 +11,39 @@ func _ready() -> void:
 
 var drag_offset = Vector2.ZERO
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if move:
+	if button_pressed or (first and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		global_position = get_global_mouse_position() + drag_offset
-	
-	
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		first = false
+		check_overlapping()
 
 
+<<<<<<< Updated upstream
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		drag_offset = global_position - get_global_mouse_position()
 		move = true
 	if event.is_action_released("click"):
 		move = false		
+=======
+func check_overlapping():
+	if len(self.get_parent().get_children()) == 1:
+		return
+	for item: Button in self.get_parent():
+		if item == self:
+			continue
+		var rect1 = item.get_rect()
+		var rect2 = get_rect()
+		if rect1.intersects(rect2):
+			print("INTERSECTING")
+	
+func _on_button_up() -> void:
+	first = false
+	check_overlapping()
+
+func _on_button_down() -> void:
+	drag_offset = global_position - get_global_mouse_position()
+	
+>>>>>>> Stashed changes
