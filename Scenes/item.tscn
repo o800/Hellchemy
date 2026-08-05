@@ -5,25 +5,29 @@
 
 [node name="Button" type="Button" unique_id=403538034]
 anchors_preset = -1
-anchor_right = 0.056
-anchor_bottom = 0.09900001
-offset_right = -0.51200104
-offset_bottom = -0.15200806
+offset_right = 64.0
+offset_bottom = 64.0
 script = ExtResource("2_5fsmu")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=106104107]
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_1ati8")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=1788436130]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.312
+anchor_bottom = 1.3590001
 offset_left = -19.0
 offset_top = 64.0
-offset_right = 84.0
-offset_bottom = 87.0
+offset_right = 0.03199768
+offset_bottom = 0.023994446
 text = "oiil"
 horizontal_alignment = 1
 
