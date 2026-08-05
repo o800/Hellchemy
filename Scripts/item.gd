@@ -20,14 +20,7 @@ func _process(delta: float) -> void:
 		check_overlapping()
 
 
-<<<<<<< Updated upstream
-func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("click"):
-		drag_offset = global_position - get_global_mouse_position()
-		move = true
-	if event.is_action_released("click"):
-		move = false		
-=======
+		
 func check_overlapping():
 	if len(self.get_parent().get_children()) == 1:
 		return
@@ -46,4 +39,3 @@ func _on_button_up() -> void:
 func _on_button_down() -> void:
 	drag_offset = global_position - get_global_mouse_position()
 	
->>>>>>> Stashed changes
