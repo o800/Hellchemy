@@ -44,11 +44,17 @@ func craft_and_create(second_item):
 	print("CRAFTED: ", crafted_item)
 	# Check if this is a valid recipe
 	if crafted_item:
-		# Combine the items to make a new one in the workspace
+		
+		# Create the item
 		Globals.create_item(crafted_item, position)
+		
+		# Add the corresponding list element to the list of items discovered
+		# TODO: Only run this logic if the recipe hasn't been discovered before
 		var list_element = list_element_scene.instantiate()
 		list_element.item_name = crafted_item
 		Globals.list_element_container.add_child(list_element)
+		
+		# Destroy the two items that formed the new item
 		second_item.queue_free()
 		queue_free()
 	
