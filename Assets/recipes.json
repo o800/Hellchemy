@@ -1,5 +1,11 @@
 {
+	"avalanche": {
+		"man": "snowman"
+	},
 	"man": {
-		"milk" : "milkman"
+		"milk" : "milkman",
+	},
+	"milk": {
+		"milk": "avalanche"
 	}
 }
