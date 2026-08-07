@@ -1,6 +1,9 @@
 extends Node
 var json = JSON.new()
+var items_container: Node = null
+var list_element_container: Node = null
 
+@onready var item_scene = preload("res://Scenes/item.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
@@ -22,3 +25,9 @@ func combine(item1: String, item2: String) -> Variant:
 		if json.data[item1].has(item2):
 			return json.data[item1][item2]
 	return null
+
+func create_item(item_name: String, position: Vector2):
+	var item: Button = item_scene.instantiate()
+	item.position = position
+	item.item_name = item_name
+	items_container.add_child(item)

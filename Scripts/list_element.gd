@@ -38,6 +38,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_down() -> void:
-	var item = item_scene.instantiate()
-	item.item_name = item_name
-	$"../../../Items".add_child(item)
+	Globals.create_item(item_name, get_global_mouse_position())

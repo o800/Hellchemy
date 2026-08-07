@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dahqdesodguxv"]
 
+[ext_resource type="Script" uid="uid://cghgntc35eipj" path="res://Scripts/list_element_container.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://rmgph6owqvag" path="res://Scenes/list_element.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://bcv4d6tkpck7o" path="res://Scripts/item_container.gd" id="3_8gbba"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=192881669]
 
@@ -11,25 +13,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -0.1920166
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=824395015]
+[node name="ListElementContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=824395015]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
+script = ExtResource("1_bo1nx")
 
-[node name="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=243370929 instance=ExtResource("1_jjgbg")]
+[node name="HBoxContainer" parent="ScrollContainer/ListElementContainer" unique_id=243370929 instance=ExtResource("1_jjgbg")]
 layout_mode = 2
 item_name = "milk"
 
-[node name="HBoxContainer2" parent="ScrollContainer/VBoxContainer" unique_id=899540279 instance=ExtResource("1_jjgbg")]
+[node name="HBoxContainer2" parent="ScrollContainer/ListElementContainer" unique_id=899540279 instance=ExtResource("1_jjgbg")]
 layout_mode = 2
 item_name = "man"
-
-[node name="HBoxContainer3" parent="ScrollContainer/VBoxContainer" unique_id=1611317925 instance=ExtResource("1_jjgbg")]
-layout_mode = 2
-item_name = "milkman"
 
 [node name="Items" type="Control" parent="." unique_id=974746229]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("3_8gbba")
