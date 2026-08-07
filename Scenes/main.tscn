@@ -24,6 +24,10 @@ item_name = "milk"
 layout_mode = 2
 item_name = "man"
 
+[node name="HBoxContainer3" parent="ScrollContainer/VBoxContainer" unique_id=1611317925 instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+item_name = "milkman"
+
 [node name="Items" type="Control" parent="." unique_id=974746229]
 layout_mode = 3
 anchors_preset = 0

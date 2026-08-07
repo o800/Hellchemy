@@ -5,8 +5,7 @@ var first = true
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var x = load("res://Asss/" + item_name.to_lower() + ".jpg")
-	print(x)
+	$TextureRect.texture = load("res://Assets/ItemImages/" + item_name.to_lower() + ".jpg")
 	global_position = get_global_mouse_position()
 	$Label.text = item_name
 
@@ -31,12 +30,17 @@ func check_overlapping():
 		var rect2 = get_global_rect()
 		print("Rect 2: ", rect2, "\nRect1", rect1)
 		if rect1.intersects(rect2):
-			print("INTERSECTING")
+			print("CRAFTED: ", Globals.combine(item.item_name, item_name))
 	
 func _on_button_up() -> void:
 	first = false
 	check_overlapping()
 
 func _on_button_down() -> void:
+	for item: Button in self.get_parent().get_children():
+		if item == self:
+			continue
+		item.z_index = 0
+	z_index = 5
 	drag_offset = global_position - get_global_mouse_position()
 	
