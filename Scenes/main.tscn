@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dahqdesodguxv"]
 
-[ext_resource type="Script" uid="uid://cghgntc35eipj" path="res://Scripts/list_element_container.gd" id="1_bo1nx"]
+[ext_resource type="Script" path="res://Scripts/list_element_container.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://rmgph6owqvag" path="res://Scenes/list_element.tscn" id="1_jjgbg"]
-[ext_resource type="Script" uid="uid://bcv4d6tkpck7o" path="res://Scripts/item_container.gd" id="3_8gbba"]
+[ext_resource type="Script" path="res://Scripts/item_container.gd" id="3_8gbba"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=192881669]
 
