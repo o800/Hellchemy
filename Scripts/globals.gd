@@ -29,7 +29,7 @@ func combine(item1: String, item2: String) -> Variant:
 	if json.data.has(item1):
 		if json.data[item1].has(item2):
 			#mark recipe as discovered
-			discovered_recipes[item1][item2] = true
+			discovered_recipes[item1] = {item2:true}
 			
 			return json.data[item1][item2]
 	return null
@@ -40,8 +40,10 @@ func is_recipe_discovered(item1, item2):
 		var tmp = item2
 		item2 = item1
 		item1 = tmp
-	if discovered_recipes[item1][item2] == true:
-		return true	
+	if discovered_recipes.has(item1):
+		if discovered_recipes[item1].has(item2):
+			if discovered_recipes[item1][item2] == true:
+				return true	
 	return false
 
 func create_item(item_name: String, position: Vector2):
