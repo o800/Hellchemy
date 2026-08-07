@@ -2,7 +2,7 @@ extends Button
 
 # This variable is necessary because when the item is initially spawned by the list element, button_down signal isn't called
 var first = true
-
+@onready var list_element_scene = preload("res://Scenes/list_element.tscn")
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,6 +46,9 @@ func craft_and_create(second_item):
 	if crafted_item:
 		# Combine the items to make a new one in the workspace
 		Globals.create_item(crafted_item, position)
+		var list_element = list_element_scene.instantiate()
+		list_element.item_name = crafted_item
+		Globals.list_element_container.add_child(list_element)
 		second_item.queue_free()
 		queue_free()
 	
