@@ -52,4 +52,14 @@ func create_item(item_name: String, position: Vector2):
 	var item: Button = item_scene.instantiate()
 	item.position = position
 	item.item_name = item_name
+	var max = items_container.get_child_count()
+	var min = 0
+	while(max-min>0):
+		if items_container.get_child((max-min)/2+min).item_name > item_name:
+			max = (max-min)/2 + min -1
+		elif items_container.get_child((max-min)/2+min).item_name < item_name:
+			min = (max-min)/2 + min +1
+		else:
+			print("warning, invalid state reached")
+	
 	items_container.add_child(item)
