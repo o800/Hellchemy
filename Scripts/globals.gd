@@ -1,6 +1,7 @@
 extends Node
 var json = JSON.new()
 var discovered_recipes: Dictionary
+var recipe_counter = 0
 var items_container: Node = null
 var list_element_container: Node = null
 
@@ -29,6 +30,7 @@ func combine(item1: String, item2: String) -> Variant:
 	if json.data.has(item1):
 		if json.data[item1].has(item2):
 			#mark recipe as discovered
+			recipe_counter += 1
 			if !discovered_recipes.has(item1):
 				discovered_recipes[item1] = {}
 			if !discovered_recipes[item1].has(item2):
