@@ -37,10 +37,6 @@ func _on_button_up() -> void:
 	check_overlapping()
 
 func _on_button_down() -> void:
-	for item: Button in self.get_parent().get_children():
-		if item == self:
-			continue
-		item.z_index = 0
-	z_index = 5
+	get_parent().move_child(self, -1)
 	drag_offset = global_position - get_global_mouse_position()
 	

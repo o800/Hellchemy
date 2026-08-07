@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 #The return type of Variant is being used as an option here. 
 func combine(item1: String, item2: String) -> Variant:
+	#order items alphabetically
 	if item2 < item1:
 		var tmp = item2
 		item2 = item1
