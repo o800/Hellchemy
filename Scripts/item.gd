@@ -37,6 +37,8 @@ func _on_button_up() -> void:
 	check_overlapping()
 
 func _on_button_down() -> void:
+	#move the node to the last position putting it at the top visually
 	get_parent().move_child(self, -1)
-	drag_offset = global_position - get_global_mouse_position()
+	
+	drag_offset = global_position - get_global_mouse_position()	
 	
