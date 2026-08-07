@@ -1,12 +1,13 @@
 extends Button
 
+# This variable is necessary because when the item is initially spawned by the list element, button_down signal isn't called
 var first = true
 
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TextureRect.texture = load("res://Assets/ItemImages/" + item_name.to_lower() + ".jpg")
-	global_position = get_global_mouse_position()
+	#global_position = get_global_mouse_position()
 	$Label.text = item_name
 
 var drag_offset = Vector2.ZERO
@@ -18,19 +19,35 @@ func _process(delta: float) -> void:
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and first:
 		first = false
 		check_overlapping()
+	
 		
 
 
-		
+# Checks if the item is overlapping with other items. If it is, it will attempt a craft and the function will exit.
 func check_overlapping():
 	for item: Button in self.get_parent().get_children():
 		if item == self:
 			continue
+		
+		# Detect collision
 		var rect1 = item.get_global_rect()
 		var rect2 = get_global_rect()
 		print("Rect 2: ", rect2, "\nRect1", rect1)
 		if rect1.intersects(rect2):
-			print("CRAFTED: ", Globals.combine(item.item_name, item_name))
+			craft_and_create(item)
+			return
+			
+
+# Will use self as the first item. Will not do anything if the input item doesn't make a valid recipe. If the recipe is valid, this node and the node passed in will be destroyed and a new item will be created.
+func craft_and_create(second_item):
+	var crafted_item = Globals.combine(second_item.item_name, item_name)
+	print("CRAFTED: ", crafted_item)
+	# Check if this is a valid recipe
+	if crafted_item:
+		# Combine the items to make a new one in the workspace
+		Globals.create_item(crafted_item, position)
+		second_item.queue_free()
+		queue_free()
 	
 func _on_button_up() -> void:
 	first = false
