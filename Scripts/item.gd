@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 		global_position = get_global_mouse_position() + drag_offset
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and first:
 		first = false
-		check_overlapping()
+		emit_signal("button_up")
 	
 		
 
@@ -82,6 +82,8 @@ func craft_and_create(second_item):
 func _on_button_up() -> void:
 	first = false
 	check_overlapping()
+	if global_position.x > Globals.list_element_container.global_position.x:
+		queue_free()
 
 func _on_button_down() -> void:
 	#move the node to the last position putting it at the top visually
