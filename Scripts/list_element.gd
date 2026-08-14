@@ -3,7 +3,7 @@ extends Button
 
 
 @onready var item_scene = preload("res://Scenes/item.tscn")
-@export var item_name = "Milk"
+@export var item_name = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if item_name == "":
