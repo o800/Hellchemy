@@ -1,7 +1,7 @@
 extends Button
 
-# This variable is necessary because when the item is initially spawned by the list element, button_down signal isn't called
-var first = true
+#This variable is necessary because when the item is initially spawned by the list element, button_down signal isn't called
+var first = false
 @onready var list_element_scene = preload("res://Scenes/list_element.tscn")
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +25,9 @@ func _process(delta: float) -> void:
 
 # Checks if the item is overlapping with other items. If it is, it will attempt a craft and the function will exit.
 func check_overlapping():
-	for item: Button in self.get_parent().get_children():
+	var nodes = self.get_parent().get_children()
+	nodes.reverse()
+	for item: Button in nodes:
 		if item == self:
 			continue
 		
@@ -82,6 +84,7 @@ func craft_and_create(second_item):
 func _on_button_up() -> void:
 	first = false
 	check_overlapping()
+	#if the item is dropped in the list, delete it
 	if global_position.x > Globals.list_element_container.global_position.x:
 		queue_free()
 
