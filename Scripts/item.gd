@@ -48,11 +48,30 @@ func craft_and_create(second_item):
 		# Create the item
 		Globals.create_item(crafted_item, position)
 		
-		# Add the corresponding list element to the list of items discovered
-		# TODO: Only run this logic if the recipe hasn't been discovered before
-		var list_element = list_element_scene.instantiate()
-		list_element.item_name = crafted_item
-		Globals.list_element_container.add_child(list_element)
+		#check if item is already discovered
+		var is_discovered = false
+		for i in Globals.list_element_container.get_children():
+			if i.item_name == crafted_item:
+				is_discovered = true
+		#if it's not, find where it goes in the list
+		if !is_discovered:
+			var max = Globals.list_element_container.get_child_count()
+			var min = 0
+			while(max-min>0):
+				if Globals.list_element_container.get_child((max-min)/2+min).item_name > item_name:
+					max = (max-min)/2 + min -1
+				elif Globals.list_element_container.get_child((max-min)/2+min).item_name < item_name:
+					min = (max-min)/2 + min +1
+				else:
+					print("warning, invalid state reached")
+					
+			# Add the corresponding list element to the list of items discovered
+			var list_element = list_element_scene.instantiate()
+			list_element.item_name = crafted_item
+			Globals.list_element_container.add_child(list_element)
+			
+			#move it to the right spot
+			Globals.list_element_container.move_child(list_element, min)
 		
 		# Destroy the two items that formed the new item
 		second_item.queue_free()
