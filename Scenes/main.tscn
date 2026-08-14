@@ -21,11 +21,11 @@ script = ExtResource("1_bo1nx")
 
 [node name="HBoxContainer" parent="ScrollContainer/ListElementContainer" unique_id=243370929 instance=ExtResource("1_jjgbg")]
 layout_mode = 2
-item_name = "milk"
+item_name = "man"
 
 [node name="HBoxContainer2" parent="ScrollContainer/ListElementContainer" unique_id=899540279 instance=ExtResource("1_jjgbg")]
 layout_mode = 2
-item_name = "man"
+item_name = "milk"
 
 [node name="Items" type="Control" parent="." unique_id=974746229]
 layout_mode = 3

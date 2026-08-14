@@ -57,13 +57,15 @@ func craft_and_create(second_item):
 		if !is_discovered:
 			var max = Globals.list_element_container.get_child_count()
 			var min = 0
-			while(max-min>0):
-				if Globals.list_element_container.get_child((max-min)/2+min).item_name > item_name:
+			while(max-min>0):	
+				print((max-min)/2+min)
+				if Globals.list_element_container.get_child((max-min)/2+min).item_name > crafted_item:
 					max = (max-min)/2 + min -1
-				elif Globals.list_element_container.get_child((max-min)/2+min).item_name < item_name:
+				elif Globals.list_element_container.get_child((max-min)/2+min).item_name < crafted_item:
 					min = (max-min)/2 + min +1
 				else:
 					print("warning, invalid state reached")
+					pass
 					
 			# Add the corresponding list element to the list of items discovered
 			var list_element = list_element_scene.instantiate()
