@@ -4,6 +4,7 @@ var discovered_recipes: Dictionary
 var recipe_counter = 0
 var items_container: Node = null
 var list_element_container: Node = null
+var discovered_items: Array
 
 @onready var item_scene = preload("res://Scenes/item.tscn")
 # Called when the node enters the scene tree for the first time.
@@ -35,6 +36,7 @@ func combine(item1: String, item2: String) -> Variant:
 				discovered_recipes[item1] = {}
 			if !discovered_recipes[item1].has(item2):
 				discovered_recipes[item1][item2] = true
+			discovered_items.push_back(json.data[item1][item2])
 			return json.data[item1][item2]
 	return null
 	
