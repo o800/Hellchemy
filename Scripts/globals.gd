@@ -11,6 +11,7 @@ var discovered_items: Array
 @onready var list_element_scene = preload("res://Scenes/list_element.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await get_tree().process_frame
 	if FileAccess.file_exists("user://savefile.json"):
 		load_progress()
 	else:
@@ -42,8 +43,6 @@ func combine(item1: String, item2: String) -> Variant:
 				discovered_recipes[item1] = {}
 			if !discovered_recipes[item1].has(item2):
 				discovered_recipes[item1][item2] = true
-			if !discovered_items.has(json.data[item1][item2]):
-				discovered_items.push_back(json.data[item1][item2])
 			return json.data[item1][item2]
 	return null
 	
@@ -88,16 +87,32 @@ func load_progress():
 	var savefile = FileAccess.open("user://savefile.json", FileAccess.READ)
 	var savedata = JSON.new()
 	savedata.parse(savefile.get_as_text())
-	discovered_items = savedata.data["items"]
-	#todo: load items into sidebar based on discovered_items
-	discovered_recipes = savedata.data["recipes"]
-	for item in discovered_items:
-		var list_element = list_element_scene.instantiate()
-		list_element.item_name = item
-		list_element_container.add_child(list_element)
+	for item in savedata.data["items"]:
+		discover_item(item)
+	discovered_recipes = savedata.data["recipies"]
+	
+	
+func discover_item(item):
+	discovered_items.push_back(item)
+	print(item)
+	
+	var max = Globals.list_element_container.get_child_count()
+	var min = 0
+	while(max-min>0):	
+		print((max-min)/2+min)
+		if Globals.list_element_container.get_child((max-min)/2+min).item_name > item:
+			max = (max-min)/2 + min -1
+		elif Globals.list_element_container.get_child((max-min)/2+min).item_name < item:
+			min = (max-min)/2 + min +1
+		else:
+			print("warning, invalid state reached")
+			break
+			
+	# Add the corresponding list element to the list of items discovered
+	var list_element = list_element_scene.instantiate()
+	list_element.item_name = item
+	Globals.list_element_container.add_child(list_element)
 		
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		#save_progress()
-		pass
+	#move it to the right spot
+	Globals.list_element_container.move_child(list_element, min)
 	

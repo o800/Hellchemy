@@ -50,31 +50,31 @@ func craft_and_create(second_item):
 		Globals.create_item(crafted_item, position)
 		
 		#check if item is already discovered
-		var is_discovered = false
-		for i in Globals.list_element_container.get_children():
-			if i.item_name == crafted_item:
-				is_discovered = true
 		#if it's not, find where it goes in the list
-		if !is_discovered:
-			var max = Globals.list_element_container.get_child_count()
-			var min = 0
-			while(max-min>0):	
-				print((max-min)/2+min)
-				if Globals.list_element_container.get_child((max-min)/2+min).item_name > crafted_item:
-					max = (max-min)/2 + min -1
-				elif Globals.list_element_container.get_child((max-min)/2+min).item_name < crafted_item:
-					min = (max-min)/2 + min +1
-				else:
-					print("warning, invalid state reached")
-					pass
-					
-			# Add the corresponding list element to the list of items discovered
-			var list_element = list_element_scene.instantiate()
-			list_element.item_name = crafted_item
-			Globals.list_element_container.add_child(list_element)
+		print(Globals.is_item_discovered(crafted_item))
+		print(Globals.discovered_items)
+		if !Globals.is_item_discovered(crafted_item):
+			Globals.discover_item(crafted_item)
+			#var max = Globals.list_element_container.get_child_count()
+			#var min = 0
+			#while(max-min>0):	
+				#print((max-min)/2+min)
+				#if Globals.list_element_container.get_child((max-min)/2+min).item_name > crafted_item:
+					#max = (max-min)/2 + min -1
+				#elif Globals.list_element_container.get_child((max-min)/2+min).item_name < crafted_item:
+					#min = (max-min)/2 + min +1
+				#else:
+					#print("warning, invalid state reached")
+					#pass
+					#
+			## Add the corresponding list element to the list of items discovered
+			#var list_element = list_element_scene.instantiate()
+			#list_element.item_name = crafted_item
+			#Globals.list_element_container.add_child(list_element)
+			#
+			##move it to the right spot
+			#Globals.list_element_container.move_child(list_element, min)
 			
-			#move it to the right spot
-			Globals.list_element_container.move_child(list_element, min)
 		
 		# Destroy the two items that formed the new item
 		second_item.queue_free()
