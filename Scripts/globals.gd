@@ -11,9 +11,9 @@ var savefile = FileAccess.open("user://savefile.json", FileAccess.READ_WRITE)
 @onready var list_element_scene = preload("res://Scenes/list_element.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	#print(savefile.get_path_absolute())
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
-	load_progress()
+	#load_progress()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -93,5 +93,6 @@ func load_progress():
 		
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		save_progress()
+		#save_progress()
+		pass
 	
