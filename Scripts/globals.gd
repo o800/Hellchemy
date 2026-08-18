@@ -7,6 +7,7 @@ var list_element_container: Node = null
 var discovered_items: Array
 
 @onready var item_scene = preload("res://Scenes/item.tscn")
+@onready var list_element_scene = preload("res://Scenes/list_element.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
@@ -74,15 +75,24 @@ func save_progress():
 	var savedata: Dictionary
 	discovered_items.sort()
 	savedata["items"] = discovered_items
-	savedata["recipies"] = discovered_recipes
+	savedata["recipes"] = discovered_recipes
 	savefile.store_string(JSON.stringify(savedata))
 
 
 func load_progress():
 	var savefile = FileAccess.open("user://savefile.json", FileAccess.READ)
+	
 	var savedata = JSON.new()
 	savedata.parse(savefile.get_as_text())
 	discovered_items = savedata.data["items"]
 	#todo: load items into sidebar based on discovered_items
-	discovered_recipes = savedata.data["recipies"]
+	discovered_recipes = savedata.data["recipes"]
+	for item in discovered_items:
+		var list_element = list_element_scene.instantiate()
+		list_element.item_name = item
+		list_element_container.add_child(list_element)
+		
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		save_progress()
 	
