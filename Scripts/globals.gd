@@ -10,10 +10,10 @@ var discovered_items: Array
 @onready var item_scene = preload("res://Scenes/item.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if !FileAccess.file_exists("user://savefile.json"):
-		save_progress()	
-	else:
+	if FileAccess.file_exists("user://savefile.json"):
 		load_progress()
+	else:
+		save_progress()
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
 	
 
