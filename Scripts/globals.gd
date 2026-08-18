@@ -5,14 +5,17 @@ var recipe_counter = 0
 var items_container: Node = null
 var list_element_container: Node = null
 var discovered_items: Array
-var savefile = FileAccess.open("user://savefile.json", FileAccess.READ_WRITE)
+
 
 @onready var item_scene = preload("res://Scenes/item.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	if !FileAccess.file_exists("user://savefile.json"):
+		save_progress()	
+	else:
+		load_progress()
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
-	load_progress()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -72,6 +75,7 @@ func is_item_discovered(item):
 	
 	
 func save_progress():
+	var savefile = FileAccess.open("user://savefile.json", FileAccess.WRITE)
 	var savedata: Dictionary
 	discovered_items.sort()
 	savedata["items"] = discovered_items
@@ -80,6 +84,7 @@ func save_progress():
 
 
 func load_progress():
+	var savefile = FileAccess.open("user://savefile.json", FileAccess.READ)
 	var savedata = JSON.new()
 	savedata.parse(savefile.get_as_text())
 	discovered_items = savedata.data["items"]
