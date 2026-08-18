@@ -30,13 +30,14 @@ func combine(item1: String, item2: String) -> Variant:
 		
 	if json.data.has(item1):
 		if json.data[item1].has(item2):
-			#mark recipe as discovered
+			#mark recipe =s discovered
 			recipe_counter += 1
 			if !discovered_recipes.has(item1):
 				discovered_recipes[item1] = {}
 			if !discovered_recipes[item1].has(item2):
 				discovered_recipes[item1][item2] = true
-			discovered_items.push_back(json.data[item1][item2])
+			if !discovered_items.has(json.data[item1][item2]):
+				discovered_items.push_back(json.data[item1][item2])
 			return json.data[item1][item2]
 	return null
 	
@@ -58,3 +59,30 @@ func create_item(item_name: String, position: Vector2):
 	item.item_name = item_name
 	items_container.add_child(item)
 	return item
+
+
+func is_item_discovered(item):
+	if discovered_items.has(item):
+		return true
+	return false
+	
+	
+	
+	
+func save():
+	var savefile = FileAccess.open("user://savefile.json", FileAccess.WRITE)
+	var savedata: Dictionary
+	discovered_items.sort()
+	savedata["items"] = discovered_items
+	savedata["recipies"] = discovered_recipes
+	savefile.store_string(JSON.stringify(savedata))
+
+
+func load():
+	var savefile = FileAccess.open("user://savefile.json", FileAccess.READ)
+	var savedata: JSON
+	savedata.parse(savefile.get_as_text())
+	discovered_items = savedata.data["items"]
+	#todo: load items into sidebar based on discovered_items
+	discovered_recipes = savedata.data["recipies"]
+	
