@@ -10,7 +10,7 @@ var discovered_items: Array
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
-	
+	load_progress()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -69,7 +69,7 @@ func is_item_discovered(item):
 	
 	
 	
-func save():
+func save_progress():
 	var savefile = FileAccess.open("user://savefile.json", FileAccess.WRITE)
 	var savedata: Dictionary
 	discovered_items.sort()
@@ -78,9 +78,9 @@ func save():
 	savefile.store_string(JSON.stringify(savedata))
 
 
-func load():
+func load_progress():
 	var savefile = FileAccess.open("user://savefile.json", FileAccess.READ)
-	var savedata: JSON
+	var savedata = JSON.new()
 	savedata.parse(savefile.get_as_text())
 	discovered_items = savedata.data["items"]
 	#todo: load items into sidebar based on discovered_items
