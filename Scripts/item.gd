@@ -54,7 +54,7 @@ func craft_and_create(second_item):
 		print(Globals.is_item_discovered(crafted_item))
 		print(Globals.discovered_items)
 		if !Globals.is_item_discovered(crafted_item):
-			Globals.discover_item(crafted_item)
+			Globals.discover(crafted_item)
 			#var max = Globals.list_element_container.get_child_count()
 			#var min = 0
 			#while(max-min>0):	

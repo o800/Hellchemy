@@ -15,6 +15,10 @@ func _ready() -> void:
 	if FileAccess.file_exists("user://savefile.json"):
 		load_progress()
 	else:
+		var starters = JSON.new()
+		starters.parse(FileAccess.open("res://Assets/starters.json", FileAccess.READ).get_as_text())
+		for i in starters.data:
+			discover(i)
 		save_progress()
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
 	
@@ -88,11 +92,11 @@ func load_progress():
 	var savedata = JSON.new()
 	savedata.parse(savefile.get_as_text())
 	for item in savedata.data["items"]:
-		discover_item(item)
-	discovered_recipes = savedata.data["recipies"]
+		discover(item)
+	discovered_recipes = savedata.data["recipes"]
 	
 	
-func discover_item(item):
+func discover(item):
 	discovered_items.push_back(item)
 	print(item)
 	
