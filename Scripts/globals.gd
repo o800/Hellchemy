@@ -87,9 +87,9 @@ func load_progress():
 	var savefile = FileAccess.open("user://savefile.json", FileAccess.READ)
 	var savedata = JSON.new()
 	savedata.parse(savefile.get_as_text())
-	for item in savedata.data["items"]:
-		discover_item(item)
-	discovered_recipes = savedata.data["recipies"]
+	#for item in savedata.data["items"]:
+		#discover_item(item)
+	discovered_recipes = savedata.data["recipes"]
 	
 	
 func discover_item(item):
@@ -115,4 +115,7 @@ func discover_item(item):
 		
 	#move it to the right spot
 	Globals.list_element_container.move_child(list_element, min)
-	
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		save_progress()

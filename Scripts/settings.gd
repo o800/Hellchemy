@@ -3,8 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$TextureRect.self_modulate.a = 0
-	get_tree().create_tween().tween_property($TextureRect, "self_modulate:a", 1, 0.8)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
