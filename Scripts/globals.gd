@@ -90,18 +90,25 @@ func save_progress():
 func load_progress():
 	var savefile = FileAccess.open("user://savefile.json", FileAccess.READ)
 	var savedata = JSON.new()
-	savedata.parse(savefile.get_as_text())
-	for item in savedata.data["items"]:
-		discover(item)
-	discovered_recipes = savedata.data["recipes"]
-	
+	if savedata.parse(savefile.get_as_text()) == OK:
+		for item in savedata.data["items"]:
+			discover(item)
+		discovered_recipes = savedata.data["recipes"]
+	else:
+		#var datetime = ""
+		#var recover = DirAccess.open("user://")
+		#for i in Time.get_datetime_dict_from_system():
+			#datetime = datetime + str(i) + "-"
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/coruppted.tscn")
+		
+			
 	
 func discover(item):
 	discovered_items.push_back(item)
 	print(item)
 	
 	var max = Globals.list_element_container.get_child_count()
-	var min = 0
+	var min = 0	
 	while(max-min>0):	
 		print((max-min)/2+min)
 		if Globals.list_element_container.get_child((max-min)/2+min).item_name > item:

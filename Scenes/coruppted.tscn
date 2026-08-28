@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://chld3bxx4iye1"]
+
+[ext_resource type="Script" uid="uid://u58pdkt6xigs" path="res://Scripts/coruppted save.gd" id="1_txnq4"]
+
+[node name="Control" type="Control" unique_id=476743715]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_txnq4")
+
+[node name="Label" type="Label" parent="." unique_id=2118248963]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "You're save is coruptid, pls ficks"
+
+[node name="ButtonDeleteSave" type="Button" parent="." unique_id=1622555701]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34300002
+anchor_top = 0.117000006
+anchor_right = 0.34300002
+anchor_bottom = 0.117000006
+offset_left = -86.13602
+offset_top = 71.184
+offset_right = 223.86398
+offset_bottom = 79.184
+text = "delrte"
+
+[node name="ButtonOpenSave" type="Button" parent="." unique_id=710224942]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.033
+anchor_bottom = 0.037
+offset_left = 257.0
+offset_top = 255.0
+offset_right = 490.984
+offset_bottom = 239.024
+text = "opin"
+
+[node name="ButtonDone" type="Button" parent="." unique_id=434454222]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 319.0
+offset_right = 605.0
+offset_bottom = 350.0
+text = "don"
+
+[connection signal="pressed" from="ButtonDeleteSave" to="." method="_on_button_delete_save_pressed"]
+[connection signal="pressed" from="ButtonOpenSave" to="." method="_on_button_open_save_pressed"]
+[connection signal="pressed" from="ButtonDone" to="." method="_on_button_done_pressed"]
