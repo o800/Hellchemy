@@ -127,3 +127,8 @@ func discover(item):
 	#move it to the right spot
 	Globals.list_element_container.move_child(list_element, min)
 	
+	
+func _notification(what):
+	match what:
+		NOTIFICATION_WM_CLOSE_REQUEST:
+			Globals.save_progress()
