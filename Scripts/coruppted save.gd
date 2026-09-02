@@ -23,3 +23,4 @@ func _on_button_open_save_pressed() -> void:
 
 func _on_button_done_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/main.tscn")
+	Globals.load_progress()
