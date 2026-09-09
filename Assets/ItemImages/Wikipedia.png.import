@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtnu0hjgipu8c"
-path="res://.godot/imported/milkman.jpg-572d1384c09a01d9bb5764827d1b146d.ctex"
+uid="uid://rs5jyg2m0oqm"
+path="res://.godot/imported/Wikipedia.png-82458b4bec0b6a2224b0410221af755e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemImages/milkman.jpg"
-dest_files=["res://.godot/imported/milkman.jpg-572d1384c09a01d9bb5764827d1b146d.ctex"]
+source_file="res://Assets/ItemImages/Wikipedia.png"
+dest_files=["res://.godot/imported/Wikipedia.png-82458b4bec0b6a2224b0410221af755e.ctex"]
 
 [params]
 

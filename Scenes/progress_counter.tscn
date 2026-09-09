@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bdgncf7teaw5p"]
+
+[ext_resource type="Script" uid="uid://biv43motg8u2l" path="res://Scripts/progress_counter.gd" id="1_700yg"]
+
+[node name="ProgressCounter" type="Control" unique_id=140273924]
+layout_mode = 3
+anchor_right = 0.314
+anchor_bottom = 0.062000003
+offset_right = 6.2719727
+offset_bottom = 7.8239975
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_700yg")
+
+[node name="RecipeLabel" type="Label" parent="." unique_id=202120035]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.208
+anchor_bottom = 0.09900001
+offset_right = 0.3840027
+offset_bottom = -0.15200806
+theme_override_font_sizes/font_size = 32
+text = "0/10 recipes discovered"
+
+[node name="ItemLabel" type="Label" parent="." unique_id=271053599]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.208
+anchor_bottom = 0.09900001
+offset_top = 45.0
+offset_right = 285.456
+offset_bottom = 85.248
+theme_override_font_sizes/font_size = 32
+text = "0/10 items discovered"

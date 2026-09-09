@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://whhpcdrmiqpk"
-path="res://.godot/imported/abacus.jpg-455d995a5d1b6d957378f74b355b965d.ctex"
+uid="uid://mgt5kniuxwhd"
+path="res://.godot/imported/Gun.png-f440f4dafc5c104ec1f00a3a5ebbfdd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemImages/abacus.jpg"
-dest_files=["res://.godot/imported/abacus.jpg-455d995a5d1b6d957378f74b355b965d.ctex"]
+source_file="res://Assets/ItemImages/Gun.png"
+dest_files=["res://.godot/imported/Gun.png-f440f4dafc5c104ec1f00a3a5ebbfdd7.ctex"]
 
 [params]
 

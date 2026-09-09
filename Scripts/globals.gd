@@ -5,8 +5,9 @@ var recipe_counter = 0
 var items_container: Node = null
 var list_element_container: Node = null
 var discovered_items: Array
-
-
+var number_of_discovered_recipes = 0
+var total_recipes = 0
+var unique_items = []
 @onready var item_scene = preload("res://Scenes/item.tscn")
 @onready var list_element_scene = preload("res://Scenes/list_element.tscn")
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,19 @@ func _ready() -> void:
 			discover(i)
 		save_progress()
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
+	
+	
+	for i in json.data:
+		var recipe_data = json.data[i]
+		for j in recipe_data:
+			if not j in unique_items:
+				unique_items.append(j)
+			if not recipe_data[j] in unique_items:
+				unique_items.append(recipe_data[j])
+			total_recipes += 1
+	print("Total:", total_recipes)
+	print("Unique Items:", unique_items)
+	print("Number of unique items: ", len(unique_items))
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -105,6 +119,7 @@ func load_progress():
 	
 func discover(item):
 	discovered_items.push_back(item)
+	number_of_discovered_recipes += 1
 	print(item)
 	
 	var max = Globals.list_element_container.get_child_count()

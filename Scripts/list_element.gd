@@ -24,9 +24,9 @@ func _ready() -> void:
 		#$HBoxContainer.fit_child_in_rect($HBoxContainer/Label, Rect2(Vector2.ZERO, $HBoxContainer.size))
 	#)
 	$HBoxContainer/Label.text = item_name
-	var path_name = "res://Assets/ItemImages/" + item_name.to_lower() + ".jpg"
+	var path_name = "res://Assets/ItemImages/" + item_name.to_lower() + ".png"
 	if FileAccess.file_exists(path_name):	
-		$HBoxContainer/TextureRect.texture = load("res://Assets/ItemImages/" + item_name.to_lower() + ".jpg")
+		$HBoxContainer/TextureRect.texture = load("res://Assets/ItemImages/" + item_name.to_lower() + ".png")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

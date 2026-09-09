@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfmdbqr14fsjf"
-path="res://.godot/imported/snowman.jpg-d48fe0fd858e433aae1d12665f45c4fb.ctex"
+uid="uid://c2cl5jypg8q3g"
+path="res://.godot/imported/DJKhaled.png-5a9f9aba348cac5fb61a9b143ed5bcf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemImages/snowman.jpg"
-dest_files=["res://.godot/imported/snowman.jpg-d48fe0fd858e433aae1d12665f45c4fb.ctex"]
+source_file="res://Assets/ItemImages/DJKhaled.png"
+dest_files=["res://.godot/imported/DJKhaled.png-5a9f9aba348cac5fb61a9b143ed5bcf4.ctex"]
 
 [params]
 
