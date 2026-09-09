@@ -1,17 +1,195 @@
 {
-	"abacus": {},
-	"avalanche": {
-		"man": "snowman",
-		"snowman": "abacus"
+	"Abstraction": {
+		"Dragon": "Fantasy",
+		"Dust": "Time",
+		"Egg": "Life",
+		"School": "Education",
+		"Skeleton": "Death"
 	},
-	"man": {
-		"milk" : "milkman"
+	"Bone": {
+		"Earth": "Fossil",
+		"Steam": "Bone Meal"
 	},
-	"milk": {
-		"milk": "avalanche"
+	"Bone Meal": {
+		"Earth": "Plant",
+		"Plant": "Tree"
 	},
-	"snowman" : {
-		"snowman": "avalanche"
+	"Carbonated Water": {
+		"Powdered Milk": "Instant Spoiled Milk"
+	},
+	"Civilisation": {
+		"Fire": "Disaster",
+		"Tornado": "Disaster",
+		"Tsunami": "Disaster"
+	},
+	"Community": {
+		"Community": "Society"
+	},
+	"Continent": {
+		"Continent": "World",
+		"Ocean": "Oceania",
+		"Water": "Ocean"
+	},
+	"Cosmic Dust": {
+		"Cosmic Dust": "Cosmic Powder"
+	},
+	"Cosmos": {
+		"Cosmos": "Reality",
+		"Dust": "Cosmic Dust"
+	},
+	"Crowd": {
+		"Crowd": "Community",
+		"Land": "Tribe"
+	},
+	"Death": {
+		"Disaster": "Tragedy",
+		"Komodo Dragon": "Skeleton"
+	},
+	"Dragon": {
+		"Ocean": "Gairaydos",
+		"Reality": "Komodo Dragon"
+	},
+	"Dust": {
+		"Dust": "Powder",
+		"Mud": "Rock",
+		"Water": "Milk"
+	},
+	"Earth": {
+		"Earth": "Continent",
+		"Fire": "Australia",
+		"Skeleton": "Plant",
+		"Water": "Mud",
+		"Wind": "Dust"
+	},
+	"Egg": {
+		"Fire": "Cooked Egg",
+		"Komodo Dragon": "Philosophy"
+	},
+	"Fiction": {
+		"Steam": "Half Life"
+	},
+	"Fire": {
+		"Komodo Dragon": "Skeleton",
+		"Milk": "Burnt Milk",
+		"Ocean": "Ocean",
+		"Rock": "Lava",
+		"Steam": "Team Fortress 2",
+		"Water": "Steam",
+		"Wind": "Dragon",
+		"World": "Hell"
+	},
+	"Fish": {
+		"Fish": "School",
+		"Human": "Fisherman",
+		"Land": "Skeleton"
+	},
+	"Forest": {
+		"Rain World": "Rainforest"
+	},
+	"Galaxy": {
+		"Galaxy": "Galaxy Cluster",
+		"Milk": "Milky Way"
+	},
+	"Galaxy Cluster": {
+		"Galaxy Cluster": "Universe"
+	},
+	"Game": {
+		"Gem": "Hatsune Miku: Project Diva F",
+		"Life": "Roblox"
+	},
+	"Hell": {
+		"Negativity": "Heaven",
+		"Philosophy": "Punishment",
+		"Powder": "Negativity",
+		"Steam": "Forza Horizon 6"
+	},
+	"Human": {
+		"Human": "Crowd",
+		"Plant": "Farmer"
+	},
+	"Idea": {
+		"Water": "Abstraction"
+	},
+	"Komodo Dragon": {
+		"Komodo Dragon": "Egg"
+	},
+	"Land": {
+		"Society": "Civilisation"
+	},
+	"Lava": {
+		"Ocean": "Land",
+		"Water": "Obsidian"
+	},
+	"Life": {
+		"Ocean": "Fish",
+		"Roblox": "DJ Khaled",
+		"Steam": "Game",
+		"Time": "Death",
+		"Tree": "Monkey"
+	},
+	"Milk": {
+		"Powder": "Powdered Milk",
+		"Time": "Spoiled Milk"
+	},
+	"Monkey": {
+		"Time": "Human"
+	},
+	"Mud": {
+		"Mud": "Slop"
+	},
+	"Negativity": {
+		"Negativity": "Positivity",
+		"Reality": "Fiction",
+		"Slop": "Gem"
+	},
+	"Ocean": {
+		"Tornado": "Whirlpool",
+		"Water": "Ocean",
+		"Wind": "Whirlpool"
+	},
+	"Oceania": {
+		"Team Fortress 2": "Sniper"
+	},
+	"Philosophy": {
+		"Reality": "Metaphysics",
+		"Water": "Idea"
+	},
+	"Plant": {
+		"Water": "Tree"
+	},
+	"Powdered Milk": {
+		"Water": "Milk"
+	},
+	"Reality": {
+		"Slop": "VRChat"
+	},
+	"School": {
+		"Universe": "University"
+	},
+	"Skeleton": {
+		"Tornado": "Bone"
+	},
+	"Solar System": {
+		"Solar System": "Galaxy"
+	},
+	"Time": {
+		"Tribe": "Town"
+	},
+	"Tree": {
+		"Tree": "Forest"
+	},
+	"Universe": {
+		"Universe": "Cosmos"
+	},
+	"Water": {
+		"Water": "Ocean",
+		"Wind": "Tsunami",
+		"World": "Rain World"
+	},
+	"Wind": {
+		"Wind": "Tornado"
+	},
+	"World": {
+		"World": "Solar System"
 	}
 }
-	

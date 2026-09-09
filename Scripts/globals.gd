@@ -130,3 +130,7 @@ func discover(item):
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		save_progress()
+		
+		
+func switch_to_popup():
+	pass

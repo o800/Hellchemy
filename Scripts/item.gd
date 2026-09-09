@@ -6,7 +6,9 @@ var first = false
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$TextureRect.texture = load("res://Assets/ItemImages/" + item_name.to_lower() + ".jpg")
+	var path_name = "res://Assets/ItemImages/" + item_name.to_lower() + ".jpg"
+	if FileAccess.file_exists(path_name):	
+		$TextureRect.texture = load("res://Assets/ItemImages/" + item_name.to_lower() + ".jpg")
 	#global_position = get_global_mouse_position()
 	$Label.text = item_name
 
