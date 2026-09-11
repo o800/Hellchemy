@@ -86,7 +86,7 @@ func _on_button_up() -> void:
 	first = false
 	check_overlapping()
 	#if the item is dropped in the list, delete it
-	if global_position.x > Globals.list_element_container.global_position.x:
+	if global_position.x+32 > Globals.list_element_container.global_position.x:
 		queue_free()
 
 func _on_button_down() -> void:
