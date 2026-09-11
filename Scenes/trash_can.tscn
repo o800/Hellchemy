@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://lg5qxb1risof"]
+
+[ext_resource type="Script" uid="uid://b6h4dob2i7bro" path="res://Scripts/trash_can.gd" id="1_t3ghh"]
+[ext_resource type="Texture2D" uid="uid://gtr3dvxwf2pr" path="res://Assets/trashcan.png" id="1_yk8j1"]
+
+[node name="TrashCan" type="Control" unique_id=1409533895]
+layout_mode = 3
+anchor_right = 0.388
+anchor_bottom = 0.69100004
+offset_right = 0.023986816
+offset_bottom = 0.23196411
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t3ghh")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=466205949]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.98800004
+offset_bottom = 13.375977
+texture_normal = ExtResource("1_yk8j1")
+texture_pressed = ExtResource("1_yk8j1")
+texture_hover = ExtResource("1_yk8j1")
+texture_disabled = ExtResource("1_yk8j1")
+texture_focused = ExtResource("1_yk8j1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -3,8 +3,16 @@
 [ext_resource type="Script" uid="uid://cghgntc35eipj" path="res://Scripts/list_element_container.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://bcv4d6tkpck7o" path="res://Scripts/item_container.gd" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bdgncf7teaw5p" path="res://Scenes/progress_counter.tscn" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://lg5qxb1risof" path="res://Scenes/trash_can.tscn" id="4_jjvhh"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=192881669]
+
+[node name="TrashCan" parent="." unique_id=1409533895 instance=ExtResource("4_jjvhh")]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 472.0
+offset_right = -283.976
+offset_bottom = 171.23196
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=123970731]
 anchors_preset = -1
@@ -20,6 +28,7 @@ theme_override_constants/separation = 20
 script = ExtResource("1_bo1nx")
 
 [node name="Items" type="Control" parent="." unique_id=974746229]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

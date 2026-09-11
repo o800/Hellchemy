@@ -23,7 +23,7 @@ func _ready() -> void:
 		save_progress()
 	json.parse(FileAccess.open("res://Assets/recipes.json", FileAccess.READ).get_as_text())
 	
-	
+	# Count how many recipes there are
 	for i in json.data:
 		var recipe_data = json.data[i]
 		for j in recipe_data:
@@ -52,7 +52,7 @@ func combine(item1: String, item2: String) -> Variant:
 	#check if recipe is discovered already
 	if is_recipe_discovered(item1,item2):
 		return null
-		
+	number_of_discovered_recipes += 1
 	if json.data.has(item1):
 		if json.data[item1].has(item2):
 			#mark recipe as discovered
@@ -108,6 +108,9 @@ func load_progress():
 		for item in savedata.data["items"]:
 			discover(item)
 		discovered_recipes = savedata.data["recipes"]
+		for first_ingredient in discovered_recipes:
+			for key in discovered_recipes[first_ingredient]:
+				number_of_discovered_recipes += 1
 	else:
 		#var datetime = ""
 		#var recover = DirAccess.open("user://")
@@ -119,7 +122,6 @@ func load_progress():
 	
 func discover(item):
 	discovered_items.push_back(item)
-	number_of_discovered_recipes += 1
 	print(item)
 	
 	var max = Globals.list_element_container.get_child_count()

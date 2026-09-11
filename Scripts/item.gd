@@ -24,9 +24,13 @@ func _process(delta: float) -> void:
 		
 
 
-# Checks if the item is overlapping with other items. If it is, it will attempt a craft and the function will exit.
+# Checks if this item is overlapping with the Trash Button. If it is, the item will be deleted
+# Otherwise, Checks if the item is overlapping with other items. If it is, it will attempt a craft and the function will exit.
 func check_overlapping():
-	var nodes = self.get_parent().get_children()
+	# Check if it is on the trash can, destroy if it is
+	if get_global_rect().intersects(self.get_parent().get_parent().find_child("TrashCan").get_global_rect()):
+		queue_free()
+	var nodes = self.get_parent().get_children() # Items Control Node
 	nodes.reverse()
 	for item: Button in nodes:
 		if item == self:
@@ -52,9 +56,10 @@ func craft_and_create(second_item):
 		Globals.create_item(crafted_item, position)
 		
 		#check if item is already discovered
-		#if it's not, find where it goes in the list
+		#if it's not, find where it goes in the listd
 		print(Globals.is_item_discovered(crafted_item))
 		print(Globals.discovered_items)
+		
 		if !Globals.is_item_discovered(crafted_item):
 			Globals.discover(crafted_item)
 			#var max = Globals.list_element_container.get_child_count()
