@@ -5,6 +5,7 @@ var first = false
 @onready var list_element_scene = preload("res://Scenes/list_element.tscn")
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
+var cancel = false
 func _ready() -> void:
 	var path_name = "res://Assets/ItemImages/" + item_name.to_lower() + ".png"
 	if FileAccess.file_exists(path_name):	
@@ -89,7 +90,10 @@ func craft_and_create(second_item):
 	
 func _on_button_up() -> void:
 	first = false
-	check_overlapping()
+	if cancel:
+		cancel = false
+	else:
+		check_overlapping()
 	#if the item is dropped in the list, delete it
 	if global_position.x+32 > Globals.list_element_container.global_position.x:
 		queue_free()
@@ -102,7 +106,7 @@ func _on_button_down() -> void:
 	
 	if $DoubleclickTimer.time_left > 0:
 		$DoubleclickTimer.stop()
-		
+		cancel = true
 		Globals.create_item(item_name, global_position + Vector2(10,-10))
 	else:
 		$DoubleclickTimer.start()
