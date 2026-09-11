@@ -30,5 +30,9 @@ offset_bottom = 0.023994446
 text = "oiil"
 horizontal_alignment = 1
 
+[node name="DoubleclickTimer" type="Timer" parent="." unique_id=131523782]
+wait_time = 0.15
+one_shot = true
+
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]

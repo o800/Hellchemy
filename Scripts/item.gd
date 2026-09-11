@@ -100,3 +100,9 @@ func _on_button_down() -> void:
 	
 	drag_offset = global_position - get_global_mouse_position()	
 	
+	if $DoubleclickTimer.time_left > 0:
+		$DoubleclickTimer.stop()
+		Globals.create_item(item_name, global_position + Vector2(10,-10))
+	else:
+		$DoubleclickTimer.start()
+	

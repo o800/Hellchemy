@@ -27,6 +27,7 @@
 	},
 	"Continent": {
 		"Continent": "World",
+		"Fire": "Australia",
 		"Ocean": "Oceania",
 		"Water": "Ocean"
 	},
@@ -72,6 +73,7 @@
 	"Fire": {
 		"Komodo Dragon": "Skeleton",
 		"Milk": "Burnt Milk",
+		"Mud": "Brick",
 		"Ocean": "Ocean",
 		"Rock": "Lava",
 		"Steam": "Team Fortress 2",
