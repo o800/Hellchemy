@@ -127,7 +127,7 @@ func discover(item):
 	while(max-min>0):	
 		print((max-min)/2+min)
 		if Globals.list_element_container.get_child((max-min)/2+min).item_name > item:
-			max = (max-min)/2 + min -1
+			max = (max-min)/2 + min
 		elif Globals.list_element_container.get_child((max-min)/2+min).item_name < item:
 			min = (max-min)/2 + min +1
 		else:
