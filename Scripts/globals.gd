@@ -52,11 +52,11 @@ func combine(item1: String, item2: String) -> Variant:
 	#check if recipe is discovered already
 	if is_recipe_discovered(item1,item2):
 		return null
-	number_of_discovered_recipes += 1
 	if json.data.has(item1):
 		if json.data[item1].has(item2):
 			#mark recipe as discovered
 			recipe_counter += 1
+			number_of_discovered_recipes += 1
 			if !discovered_recipes.has(item1):
 				discovered_recipes[item1] = {}
 			if !discovered_recipes[item1].has(item2):

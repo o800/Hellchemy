@@ -102,6 +102,7 @@ func _on_button_down() -> void:
 	
 	if $DoubleclickTimer.time_left > 0:
 		$DoubleclickTimer.stop()
+		
 		Globals.create_item(item_name, global_position + Vector2(10,-10))
 	else:
 		$DoubleclickTimer.start()
