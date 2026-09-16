@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dnea8wjkkwhlo"]
+
+[ext_resource type="Script" uid="uid://530qawwm6axo" path="res://Scripts/cheat_console.gd" id="1_g4fw6"]
+
+[node name="CheatConsole" type="Control" unique_id=1661595696]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g4fw6")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=890150133]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 192.0
+placeholder_text = "Welcome to the Hellchemy Cheat Console.
+Enter \"back\" to go back to the Game."
+
+[node name="Button" type="Button" parent="." unique_id=64684908]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 200.0
+offset_right = 376.0
+offset_bottom = 232.0
+text = "ENTER"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

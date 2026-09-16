@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dahqdesodguxv"]
 
 [ext_resource type="Script" uid="uid://cghgntc35eipj" path="res://Scripts/list_element_container.gd" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://c3x6ihar2nnku" path="res://Scripts/main.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://bcv4d6tkpck7o" path="res://Scripts/item_container.gd" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bdgncf7teaw5p" path="res://Scenes/progress_counter.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://lg5qxb1risof" path="res://Scenes/trash_can.tscn" id="4_jjvhh"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=192881669]
+script = ExtResource("1_kry3j")
 
 [node name="TrashCan" parent="." unique_id=1409533895 instance=ExtResource("4_jjvhh")]
 unique_name_in_owner = true

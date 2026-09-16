@@ -52,8 +52,10 @@ func combine(item1: String, item2: String) -> Variant:
 	#check if recipe is discovered already
 	if is_recipe_discovered(item1,item2):
 		return null
+	
 	if json.data.has(item1):
 		if json.data[item1].has(item2):
+			number_of_discovered_recipes += 1
 			#mark recipe as discovered
 			recipe_counter += 1
 			number_of_discovered_recipes += 1
@@ -63,7 +65,18 @@ func combine(item1: String, item2: String) -> Variant:
 				discovered_recipes[item1][item2] = true
 			return json.data[item1][item2]
 	return null
-	
+
+func is_valid_recipe(item1: String, item2: String) -> bool:
+	#order items alphabetically
+	if item2 < item1:
+		var tmp = item2
+		item2 = item1
+		item1 = tmp
+		
+	if json.data.has(item1):
+		if json.data[item1].has(item2):
+			return true
+	return false
 
 func is_recipe_discovered(item1, item2):
 	if item2 < item1:
@@ -151,3 +164,7 @@ func _notification(what: int) -> void:
 		
 func switch_to_popup():
 	pass
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("open cheat console"):
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/cheat_console.tscn")

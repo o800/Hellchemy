@@ -49,9 +49,16 @@ func check_overlapping():
 
 # Will use self as the first item. Will not do anything if the input item doesn't make a valid recipe. If the recipe is valid, this node and the node passed in will be destroyed and a new item will be created.
 func craft_and_create(second_item):
+	if not Globals.is_valid_recipe(second_item.item_name, item_name):
+		var items = [second_item, self]
+		var effect = func effect(v: Node):
+			v.get_node("Label").add_theme_color_override("font_color", Color.RED)
+			await get_tree().create_timer(0.65).timeout
+			v.get_node("Label").add_theme_color_override("font_color", Color.WHITE)
+		for v in items:
+			effect.call(v)
 	var crafted_item = Globals.combine(second_item.item_name, item_name)
 	print("CRAFTED: ", crafted_item)
-	# Check if this is a valid recipe
 	if crafted_item:
 		
 		# Create the item
