@@ -64,7 +64,18 @@ func combine(item1: String, item2: String) -> Variant:
 				discovered_recipes[item1][item2] = true
 			return json.data[item1][item2]
 	return null
-	
+
+func is_valid_recipe(item1: String, item2: String) -> bool:
+	#order items alphabetically
+	if item2 < item1:
+		var tmp = item2
+		item2 = item1
+		item1 = tmp
+		
+	if json.data.has(item1):
+		if json.data[item1].has(item2):
+			return true
+	return false
 
 func is_recipe_discovered(item1, item2):
 	if item2 < item1:
