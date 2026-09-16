@@ -6,6 +6,7 @@ var first = false
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
 var cancel = false
+var pos_offset = Vector2(0,0)
 func _ready() -> void:
 	var path_name = "res://Assets/ItemImages/" + item_name.to_lower() + ".png"
 	if FileAccess.file_exists(path_name):	
@@ -87,6 +88,8 @@ func craft_and_create(second_item):
 		# Destroy the two items that formed the new item
 		second_item.queue_free()
 		queue_free()
+	else:
+		$AnimationPlayer.play("fail")
 	
 func _on_button_up() -> void:
 	first = false

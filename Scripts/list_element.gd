@@ -40,4 +40,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_down() -> void:
-	Globals.create_item(item_name, get_global_mouse_position()).first = true
+	var item = Globals.create_item(item_name, global_position)
+	item.first = true
+	item.drag_offset = global_position - get_global_mouse_position()
