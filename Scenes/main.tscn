@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cghgntc35eipj" path="res://Scripts/list_element_container.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://c3x6ihar2nnku" path="res://Scripts/main.gd" id="1_kry3j"]
-[ext_resource type="Script" uid="uid://bes2a3458gcox" path="res://Scripts/search.gd" id="2_21xkr"]
+[ext_resource type="Script" path="res://Scripts/search.gd" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://bcv4d6tkpck7o" path="res://Scripts/item_container.gd" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bdgncf7teaw5p" path="res://Scenes/progress_counter.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://j88kmjairomo" path="res://Scripts/clear.gd" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://bpb10aimwxn27" path="res://Scenes/ghost_item.tscn" id="6_21xkr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xkr"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -70,13 +69,6 @@ anchor_right = 0.07
 anchor_bottom = 0.23
 text = "Clean"
 script = ExtResource("5_kry3j")
-
-[node name="GhostItem" parent="." unique_id=84266724 instance=ExtResource("6_21xkr")]
-offset_left = 504.0
-offset_top = 544.0
-offset_right = 503.488
-offset_bottom = 519.872
-item_name = "Australia"
 
 [connection signal="text_changed" from="Search" to="Search" method="_on_text_changed"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
