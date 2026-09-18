@@ -1,5 +1,8 @@
 extends Button
 
+
+var GHOST_ITEM_SCENE = preload("res://Scenes/ghost_item.tscn")
+
 #This variable is necessary because when the item is initially spawned by the list element, button_down signal isn't called
 var first = false
 @onready var list_element_scene = preload("res://Scenes/list_element.tscn")
@@ -74,25 +77,6 @@ func craft_and_create(second_item):
 		
 		if !Globals.is_item_discovered(crafted_item):
 			Globals.discover(crafted_item)
-			#var max = Globals.list_element_container.get_child_count()
-			#var min = 0
-			#while(max-min>0):	
-				#print((max-min)/2+min)
-				#if Globals.list_element_container.get_child((max-min)/2+min).item_name > crafted_item:
-					#max = (max-min)/2 + min -1
-				#elif Globals.list_element_container.get_child((max-min)/2+min).item_name < crafted_item:
-					#min = (max-min)/2 + min +1
-				#else:
-					#print("warning, invalid state reached")
-					#pass
-					#
-			## Add the corresponding list element to the list of items discovered
-			#var list_element = list_element_scene.instantiate()
-			#list_element.item_name = crafted_item
-			#Globals.list_element_container.add_child(list_element)
-			#
-			##move it to the right spot
-			#Globals.list_element_container.move_child(list_element, min)
 			
 		
 		# Destroy the two items that formed the new item
@@ -100,6 +84,12 @@ func craft_and_create(second_item):
 		queue_free()
 	else:
 		$AnimationPlayer.play("fail")
+		if Globals.is_recipe_discovered(item_name, second_item.item_name):
+			var midpoint_vector = (position + second_item.position) / 2 + Vector2(0,-65)
+			var instance = GHOST_ITEM_SCENE.instantiate()
+			instance.global_position = midpoint_vector
+			instance.item_name = Globals.get_resulting_item(item_name, second_item.item_name)
+			$"../../".add_child(instance)
 	
 func _on_button_up() -> void:
 	first = false
