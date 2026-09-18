@@ -4,17 +4,17 @@
 [ext_resource type="Script" uid="uid://c3x6ihar2nnku" path="res://Scripts/main.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://bcv4d6tkpck7o" path="res://Scripts/item_container.gd" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bdgncf7teaw5p" path="res://Scenes/progress_counter.tscn" id="3_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://lg5qxb1risof" path="res://Scenes/trash_can.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://j88kmjairomo" path="res://Scripts/clear.gd" id="5_kry3j"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=192881669]
 script = ExtResource("1_kry3j")
 
-[node name="TrashCan" parent="." unique_id=1409533895 instance=ExtResource("4_jjvhh")]
-unique_name_in_owner = true
-offset_left = 16.0
-offset_top = 472.0
-offset_right = -283.976
-offset_bottom = 171.23196
+[node name="ColorRect" type="ColorRect" parent="." unique_id=371289433]
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=123970731]
 anchors_preset = -1
@@ -46,3 +46,18 @@ offset_left = -0.19200134
 offset_top = -0.20000076
 offset_right = 0.32000732
 offset_bottom = 3.0879974
+
+[node name="Button" type="Button" parent="." unique_id=1152904839]
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.179
+anchor_right = 0.071
+anchor_bottom = 0.22700001
+offset_left = 0.048000336
+offset_top = 0.0079956055
+offset_right = -10.792
+offset_bottom = -6.0960083
+text = "Clean"
+script = ExtResource("5_kry3j")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

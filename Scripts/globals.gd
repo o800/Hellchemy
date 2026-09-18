@@ -55,7 +55,6 @@ func combine(item1: String, item2: String) -> Variant:
 	
 	if json.data.has(item1):
 		if json.data[item1].has(item2):
-			number_of_discovered_recipes += 1
 			#mark recipe as discovered
 			recipe_counter += 1
 			number_of_discovered_recipes += 1

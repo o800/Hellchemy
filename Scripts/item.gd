@@ -6,7 +6,7 @@ var first = false
 @export var item_name: String = ""
 # Called when the node enters the scene tree for the first time.
 var cancel = false
-var pos_offset = Vector2(0,0)
+
 func _ready() -> void:
 	var path_name = "res://Assets/ItemImages/" + item_name.to_lower() + ".png"
 	if FileAccess.file_exists(path_name):	
@@ -20,18 +20,21 @@ var drag_offset = Vector2.ZERO
 func _process(delta: float) -> void:
 	if button_pressed or (first and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		global_position = get_global_mouse_position() + drag_offset
+		$AnimationPlayer.stop()
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and first:
 		first = false
 		emit_signal("button_up")
+	
 		
 
 
-# Checks if this item is overlapping with the Trash Button. If it is, the item will be deleted
-# Otherwise, Checks if the item is overlapping with other items. If it is, it will attempt a craft and the function will exit.
+
+#Checks if the item is overlapping with other items. If it is, it will attempt a craft and the function will exit.
 func check_overlapping():
-	# Check if it is on the trash can, destroy if it is
-	if get_global_rect().intersects(self.get_parent().get_parent().find_child("TrashCan").get_global_rect()):
-		queue_free()
+	#[DEPRECATED] 
+	#Check if it is on the trash can, destroy if it is 
+	#if get_global_rect().intersects(self.get_parent().get_parent().find_child("TrashCan").get_global_rect()):
+	#	queue_free()
 	var nodes = self.get_parent().get_children() # Items Control Node
 	nodes.reverse()
 	for item: Button in nodes:
@@ -53,7 +56,7 @@ func craft_and_create(second_item):
 		var items = [second_item, self]
 		var effect = func effect(v: Node):
 			v.get_node("Label").add_theme_color_override("font_color", Color.RED)
-			await get_tree().create_timer(0.65).timeout
+			await get_tree().create_timer(0.4).timeout
 			v.get_node("Label").add_theme_color_override("font_color", Color.WHITE)
 		for v in items:
 			effect.call(v)
@@ -105,7 +108,7 @@ func _on_button_up() -> void:
 	else:
 		check_overlapping()
 	#if the item is dropped in the list, delete it
-	if global_position.x+32 > Globals.list_element_container.global_position.x:
+	if global_position.x+32 > $"../../ColorRect".position.x:
 		queue_free()
 
 func _on_button_down() -> void:
@@ -120,4 +123,6 @@ func _on_button_down() -> void:
 		Globals.create_item(item_name, global_position + Vector2(10,-10))
 	else:
 		$DoubleclickTimer.start()
+	
+	
 	
