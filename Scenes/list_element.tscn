@@ -11,6 +11,8 @@ anchor_right = 0.16700001
 anchor_bottom = 0.123
 offset_right = -0.38404846
 offset_bottom = 0.29599762
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_djpnx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=243370929]

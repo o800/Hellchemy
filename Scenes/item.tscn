@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://prympnd0c17m" path="res://icon.svg" id="2_1ati8"]
 [ext_resource type="Script" uid="uid://ynlymkicncuc" path="res://Scripts/item.gd" id="2_5fsmu"]
+[ext_resource type="Script" uid="uid://6wob4uwe0grb" path="res://Scenes/label.gd" id="3_u06aw"]
 
 [sub_resource type="Animation" id="Animation_76mu4"]
 length = 0.4
@@ -42,9 +43,15 @@ _data = {
 
 [node name="Button" type="Button" unique_id=403538034]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 64.0
-offset_bottom = 64.0
+anchors_preset = -1
+anchor_right = 0.056
+anchor_bottom = 0.09900001
+offset_bottom = -0.15200806
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_5fsmu")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=106104107]
@@ -60,14 +67,18 @@ expand_mode = 1
 [node name="Label" type="Label" parent="." unique_id=1788436130]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = -0.29500002
+anchor_top = 1.067
 anchor_right = 1.312
 anchor_bottom = 1.3590001
-offset_left = -19.0
-offset_top = 64.0
+offset_left = 0.031042099
+offset_top = -4.288002
 offset_right = 0.03199768
 offset_bottom = 0.023994446
+theme_override_font_sizes/font_size = 16
 text = "oiil"
 horizontal_alignment = 1
+script = ExtResource("3_u06aw")
 
 [node name="DoubleclickTimer" type="Timer" parent="." unique_id=131523782]
 wait_time = 0.15
