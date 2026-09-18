@@ -10,6 +10,7 @@ func _ready() -> void:
 	get_tree().create_tween().tween_property(self, "position", position + Vector2(0, -100), 1.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	get_tree().create_tween().tween_property(self, "self_modulate:a", 0, 1.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	get_tree().create_tween().tween_property($Label, "self_modulate:a", 0, 1.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
