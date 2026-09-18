@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bpb10aimwxn27"]
+
+[ext_resource type="Texture2D" uid="uid://prympnd0c17m" path="res://icon.svg" id="1_comcc"]
+[ext_resource type="Script" uid="uid://58nkb1miytpf" path="res://Scripts/ghost_item.gd" id="2_e8xad"]
+
+[node name="GhostItem" type="TextureRect" unique_id=84266724]
+anchors_preset = -1
+anchor_right = 0.056
+anchor_bottom = 0.136
+offset_right = -0.51200104
+offset_bottom = -24.128006
+texture = ExtResource("1_comcc")
+expand_mode = 3
+script = ExtResource("2_e8xad")
+
+[node name="Label" type="Label" parent="." unique_id=562653962]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.25
+offset_top = -7.0
+text = "Label"
+horizontal_alignment = 1
