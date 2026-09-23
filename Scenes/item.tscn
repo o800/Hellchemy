@@ -46,9 +46,6 @@ self_modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_right = 0.056
 anchor_bottom = 0.09900001
-offset_bottom = -0.15200806
-grow_horizontal = 2
-grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -86,6 +83,7 @@ libraries/ = SubResource("AnimationLibrary_btogu")
 
 [node name="Control" type="Control" parent="." unique_id=1076888205]
 layout_mode = 1
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0
