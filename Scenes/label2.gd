@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	label_settings.font_size = ($"../Control/Marker2D".global_position.y - $"..".global_position.y)/64 * 16
+	label_settings.font_size = ($"../../Control/Marker2D".global_position.y - $"../..".global_position.y)/64 * 16
