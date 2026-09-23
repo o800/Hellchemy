@@ -8,4 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("open cheat console"):
+		dev_stuff_REMOVE()
+
+func dev_stuff_REMOVE():
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/cheat_console.tscn")

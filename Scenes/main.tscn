@@ -2,13 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cghgntc35eipj" path="res://Scripts/list_element_container.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://c3x6ihar2nnku" path="res://Scripts/main.gd" id="1_kry3j"]
-[ext_resource type="Script" path="res://Scripts/search.gd" id="2_21xkr"]
+[ext_resource type="Script" uid="uid://bes2a3458gcox" path="res://Scripts/search.gd" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://bcv4d6tkpck7o" path="res://Scripts/item_container.gd" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bdgncf7teaw5p" path="res://Scenes/progress_counter.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://j88kmjairomo" path="res://Scripts/clear.gd" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://c1qcfo8uph2i0" path="res://Scripts/scale_finder.gd" id="7_6bp64"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xkr"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_6bp64"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=192881669]
 script = ExtResource("1_kry3j")
@@ -48,6 +51,7 @@ script = ExtResource("1_bo1nx")
 [node name="Items" type="Control" parent="." unique_id=974746229]
 unique_name_in_owner = true
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -1.0
@@ -72,8 +76,18 @@ anchor_left = 0.02
 anchor_top = 0.18
 anchor_right = 0.07
 anchor_bottom = 0.23
+theme = SubResource("Theme_6bp64")
+theme_override_font_sizes/font_size = 16
 text = "Clean"
 script = ExtResource("5_kry3j")
+
+[node name="ScaleFinder" type="Control" parent="." unique_id=1686882256]
+layout_mode = 3
+anchor_top = 0.002
+anchor_bottom = 0.002
+script = ExtResource("7_6bp64")
+
+[node name="Marker2D" type="Marker2D" parent="ScaleFinder" unique_id=1834138774]
 
 [connection signal="text_changed" from="Search" to="Search" method="_on_text_changed"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

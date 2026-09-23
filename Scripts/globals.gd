@@ -10,6 +10,7 @@ var total_recipes = 0
 var unique_items = []
 @onready var item_scene = preload("res://Scenes/item.tscn")
 @onready var list_element_scene = preload("res://Scenes/list_element.tscn")
+var ui_scale = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame

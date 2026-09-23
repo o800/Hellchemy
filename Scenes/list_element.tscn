@@ -12,8 +12,6 @@ anchor_right = 0.16700001
 anchor_bottom = 0.116000004
 offset_right = -0.38404846
 offset_bottom = -0.16799927
-size_flags_horizontal = 3
-size_flags_vertical = 3
 script = ExtResource("1_djpnx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=243370929]
@@ -38,6 +36,7 @@ script = ExtResource("3_jkq47")
 
 [node name="Control" type="Control" parent="." unique_id=1289722730]
 layout_mode = 1
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0

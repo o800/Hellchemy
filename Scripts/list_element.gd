@@ -31,7 +31,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	custom_minimum_size = Vector2(Globals.ui_scale * 48, Globals.ui_scale * 48)
 
 
 
