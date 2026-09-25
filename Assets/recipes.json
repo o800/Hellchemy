@@ -85,7 +85,7 @@
 		"Fire": "Cooked Egg",
 		"Komodo Dragon": "Philosophy",
 		"Steam": "Cooked Egg",
-		"Time": "Komodo Dragon"
+		"Time": "Girl"
 	},
 	"Fiction": {
 		"Komodo Dragon": "Dragon",
@@ -170,6 +170,7 @@
 		"Skeleton": "Death"
 	},
 	"Milk": {
+		"Powder": "Powdered Milk",
 		"Time": "Spoiled Milk"
 	},
 	"Monkey": {
