@@ -17,9 +17,7 @@
 		"Steam": "Bone Meal"
 	},
 	"Bone Meal": {
-		"Plant": "Tree"
-	},
-	"Bone Meal ": {
+		"Plant": "Tree",
 		"Earth": "Plant"
 	},
 	"Carbonated Water": {
@@ -248,7 +246,7 @@
 		"World": "Rain World"
 	},
 	"Wind": {
-		"Wind ": "Tornado"
+		"Wind": "Tornado"
 	},
 	"World": {
 		"World": "Solar System"
