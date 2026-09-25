@@ -8,6 +8,8 @@ var discovered_items: Array
 var number_of_discovered_recipes = 0
 var total_recipes = 0
 var unique_items = []
+var force_reload = false
+
 @onready var item_scene = preload("res://Scenes/item.tscn")
 @onready var list_element_scene = preload("res://Scenes/list_element.tscn")
 var ui_scale = 1
@@ -180,3 +182,7 @@ func switch_to_popup():
 	
 func _input(event: InputEvent) -> void:
 	pass
+	
+func reload():
+	await get_tree().call_deferred("change_scene_to_file", "res://Scenes/main.tscn")
+	force_reload = true

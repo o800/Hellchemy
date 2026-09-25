@@ -3,7 +3,9 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	if Globals.force_reload:
+		Globals.force_reload = false
+		Globals.load_progress()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
