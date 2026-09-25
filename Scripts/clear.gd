@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	add_theme_font_size_override("font_size", 16 * Globals.ui_scale)
 
 
 func _on_pressed() -> void:

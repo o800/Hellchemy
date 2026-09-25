@@ -1,4 +1,4 @@
-extends LineEdit
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,8 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func _on_text_changed(new_text: String) -> void:
-	for i in $"../ScrollContainer/ListElementContainer".get_children():
-		i.visible = i.item_name.to_lower().contains(text.to_lower()) || text == ""
+	#The marker is at y = 1.3 at base ui scale and is positioned with a control node, so this finds the current UI scale
+	Globals.ui_scale = $Marker2D.global_position.y / 1.3

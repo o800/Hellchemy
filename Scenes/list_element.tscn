@@ -2,34 +2,45 @@
 
 [ext_resource type="Script" uid="uid://bbwmuabpmffad" path="res://Scripts/list_element.gd" id="1_djpnx"]
 [ext_resource type="Texture2D" uid="uid://prympnd0c17m" path="res://icon.svg" id="1_kfl8k"]
+[ext_resource type="Script" uid="uid://cwwywtc5yutqy" path="res://Scenes/label2.gd" id="3_jkq47"]
 
 [node name="Button" type="Button" unique_id=1611317925]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(48, 48)
 anchors_preset = -1
 anchor_right = 0.16700001
-anchor_bottom = 0.123
+anchor_bottom = 0.116000004
 offset_right = -0.38404846
-offset_bottom = 0.29599762
-size_flags_horizontal = 3
-size_flags_vertical = 3
+offset_bottom = -0.16799927
 script = ExtResource("1_djpnx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=243370929]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.95800006
-offset_right = 1.0
-offset_bottom = 1.0079994
+anchor_bottom = 1.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1357303995]
 layout_mode = 2
 texture = ExtResource("1_kfl8k")
 expand_mode = 3
 
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=323898094]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1198742316]
 layout_mode = 2
 text = "Lithium"
+script = ExtResource("3_jkq47")
+
+[node name="Control" type="Control" parent="." unique_id=1289722730]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="Marker2D" type="Marker2D" parent="Control" unique_id=1892517712]
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
