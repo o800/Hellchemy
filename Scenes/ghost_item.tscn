@@ -2,13 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://prympnd0c17m" path="res://icon.svg" id="1_comcc"]
 [ext_resource type="Script" uid="uid://58nkb1miytpf" path="res://Scripts/ghost_item.gd" id="2_e8xad"]
+[ext_resource type="Script" uid="uid://bv3ijbic0g111" path="res://Scripts/label3.gd" id="3_e8xad"]
 
 [node name="GhostItem" type="TextureRect" unique_id=84266724]
 anchors_preset = -1
 anchor_right = 0.056
-anchor_bottom = 0.136
+anchor_bottom = 0.09900001
 offset_right = -0.51200104
-offset_bottom = -24.128006
+offset_bottom = -0.15200806
 texture = ExtResource("1_comcc")
 expand_mode = 3
 script = ExtResource("2_e8xad")
@@ -27,3 +28,4 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 text = "Label"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_e8xad")
