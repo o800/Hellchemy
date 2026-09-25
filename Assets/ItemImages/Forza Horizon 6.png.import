@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7u4iq56lfsh2"
-path="res://.godot/imported/VR.png-d7745c27eb1de2b69da08c5b5480311d.ctex"
+uid="uid://d188k81uccv45"
+path="res://.godot/imported/Forza Horizon 6.png-b16ddce2ecaff5b75e57e8cae5f4a56a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemImages/VR.png"
-dest_files=["res://.godot/imported/VR.png-d7745c27eb1de2b69da08c5b5480311d.ctex"]
+source_file="res://Assets/ItemImages/Forza Horizon 6.png"
+dest_files=["res://.godot/imported/Forza Horizon 6.png-b16ddce2ecaff5b75e57e8cae5f4a56a.ctex"]
 
 [params]
 

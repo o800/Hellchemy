@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqm4gy0c6uvic"
-path="res://.godot/imported/GameController.png-9d0ce395c6ef253bcd45064931e6a37a.ctex"
+uid="uid://7u4iq56lfsh2"
+path="res://.godot/imported/VRChat.png-61df1cbaf6942ad10c041914000b0f69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemImages/GameController.png"
-dest_files=["res://.godot/imported/GameController.png-9d0ce395c6ef253bcd45064931e6a37a.ctex"]
+source_file="res://Assets/ItemImages/VRChat.png"
+dest_files=["res://.godot/imported/VRChat.png-61df1cbaf6942ad10c041914000b0f69.ctex"]
 
 [params]
 

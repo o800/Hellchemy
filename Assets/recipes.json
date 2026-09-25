@@ -3,19 +3,32 @@
 		"Dragon": "Fantasy",
 		"Dust": "Time",
 		"Egg": "Life",
+		"Grim Reaper": "Death",
+		"Hellchemist": "Hellchemy",
+		"Human": "Intelligence",
 		"School": "Education",
+		"Scientist": "Science",
 		"Skeleton": "Death"
 	},
 	"Bone": {
+		"Bone": "Skeleton",
 		"Earth": "Fossil",
+		"Slop": "Zack D Films",
 		"Steam": "Bone Meal"
 	},
 	"Bone Meal": {
-		"Earth": "Plant",
 		"Plant": "Tree"
 	},
+	"Bone Meal ": {
+		"Earth": "Plant"
+	},
 	"Carbonated Water": {
-		"Powdered Milk": "Instant Spoiled Milk"
+		"Powdered Milk": "Spoiled Milk"
+	},
+	"City": {
+		"Fire": "Disaster",
+		"Tornado": "Disaster",
+		"Tsunami": "Disaster"
 	},
 	"Civilisation": {
 		"Fire": "Disaster",
@@ -36,7 +49,8 @@
 	},
 	"Cosmos": {
 		"Cosmos": "Reality",
-		"Dust": "Cosmic Dust"
+		"Dust": "Cosmic Dust",
+		"Powder": "Cosmic Powder"
 	},
 	"Crowd": {
 		"Crowd": "Community",
@@ -44,7 +58,10 @@
 	},
 	"Death": {
 		"Disaster": "Tragedy",
-		"Komodo Dragon": "Skeleton"
+		"Human": "Skeleton",
+		"Komodo Dragon": "Skeleton",
+		"Life": "Grim Reaper",
+		"Monkey": "Skeleton"
 	},
 	"Dragon": {
 		"Ocean": "Gairaydos",
@@ -52,8 +69,9 @@
 	},
 	"Dust": {
 		"Dust": "Powder",
+		"Metaphysics": "Time",
 		"Mud": "Rock",
-		"Water": "Milk"
+		"Water": "Mud"
 	},
 	"Earth": {
 		"Earth": "Continent",
@@ -62,24 +80,34 @@
 		"Water": "Mud",
 		"Wind": "Dust"
 	},
+	"Education": {
+		"Time": "Science"
+	},
 	"Egg": {
 		"Fire": "Cooked Egg",
 		"Komodo Dragon": "Philosophy",
-		"Time": "Girl"
+		"Steam": "Cooked Egg",
+		"Time": "Komodo Dragon"
 	},
 	"Fiction": {
+		"Komodo Dragon": "Dragon",
 		"Steam": "Half Life"
 	},
 	"Fire": {
+		"Forest": "Land",
+		"Human": "Skeleton",
 		"Komodo Dragon": "Skeleton",
 		"Milk": "Burnt Milk",
+		"Monkey": "Skeleton",
 		"Mud": "Brick",
-		"Ocean": "Ocean",
 		"Rock": "Lava",
+		"Skeleton": "Dust",
 		"Steam": "Team Fortress 2",
+		"Town": "Disaster",
+		"Tribe": "Disaster",
 		"Water": "Steam",
 		"Wind": "Dragon",
-		"World": "Hell"
+		"World": "Sun"
 	},
 	"Fish": {
 		"Fish": "School",
@@ -87,6 +115,8 @@
 		"Land": "Skeleton"
 	},
 	"Forest": {
+		"Forest": "Woodland",
+		"Land": "Woodland",
 		"Rain World": "Rainforest"
 	},
 	"Galaxy": {
@@ -98,17 +128,24 @@
 	},
 	"Game": {
 		"Gem": "Hatsune Miku: Project Diva F",
-		"Life": "Roblox"
+		"Life": "Roblox",
+		"Time": "Speedrun"
+	},
+	"Grim Reaper": {
+		"Metaphysics": "Death",
+		"Water": "Death"
 	},
 	"Hell": {
 		"Negativity": "Heaven",
 		"Philosophy": "Punishment",
 		"Powder": "Negativity",
+		"Scientist": "Hellchemist",
 		"Steam": "Forza Horizon 6"
 	},
 	"Human": {
 		"Human": "Crowd",
-		"Plant": "Farmer"
+		"Plant": "Farmer",
+		"Science": "Scientist"
 	},
 	"Idea": {
 		"Water": "Abstraction"
@@ -120,6 +157,7 @@
 		"Society": "Civilisation"
 	},
 	"Lava": {
+		"Milk": "Burnt Milk",
 		"Ocean": "Land",
 		"Water": "Obsidian"
 	},
@@ -130,8 +168,10 @@
 		"Time": "Death",
 		"Tree": "Monkey"
 	},
+	"Metaphysics": {
+		"Skeleton": "Death"
+	},
 	"Milk": {
-		"Powder": "Powdered Milk",
 		"Time": "Spoiled Milk"
 	},
 	"Monkey": {
@@ -147,7 +187,6 @@
 	},
 	"Ocean": {
 		"Tornado": "Whirlpool",
-		"Water": "Ocean",
 		"Wind": "Whirlpool"
 	},
 	"Oceania": {
@@ -155,13 +194,20 @@
 	},
 	"Philosophy": {
 		"Reality": "Metaphysics",
+		"Speedrun": "Wikipedia",
 		"Water": "Idea"
 	},
 	"Plant": {
 		"Water": "Tree"
 	},
+	"Powder": {
+		"Water": "Powdered Milk"
+	},
 	"Powdered Milk": {
 		"Water": "Milk"
+	},
+	"Rainforest": {
+		"World": "Rain World"
 	},
 	"Reality": {
 		"Slop": "VRChat"
@@ -178,8 +224,20 @@
 	"Time": {
 		"Tribe": "Town"
 	},
+	"Tornado": {
+		"Town": "Disaster",
+		"Tribe": "Disaster"
+	},
+	"Town": {
+		"Town": "City",
+		"Tsunami": "Disaster"
+	},
 	"Tree": {
 		"Tree": "Forest"
+	},
+	"Tribe": {
+		"Tribe": "City",
+		"Tsunami": "Disaster"
 	},
 	"Universe": {
 		"Universe": "Cosmos"
@@ -190,7 +248,7 @@
 		"World": "Rain World"
 	},
 	"Wind": {
-		"Wind": "Tornado"
+		"Wind ": "Tornado"
 	},
 	"World": {
 		"World": "Solar System"
