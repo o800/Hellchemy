@@ -5,7 +5,12 @@ extends CanvasLayer
 func _ready() -> void:
 	if Globals.force_reload:
 		Globals.force_reload = false
-		Globals.load_progress()
+		Globals.total_recipes = 0
+		Globals.number_of_discovered_recipes = 0
+		Globals.recipe_counter = 0
+		Globals.discovered_items.clear()
+		Globals.discovered_recipes.clear()
+		Globals._ready()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
