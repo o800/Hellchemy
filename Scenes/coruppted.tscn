@@ -34,12 +34,12 @@ script = ExtResource("2_jc5m7")
 [node name="ButtonDeleteSave" type="Button" parent="." unique_id=1622555701]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.36200002
-anchor_top = 0.537
+anchor_left = 0.36600003
+anchor_top = 0.546
 anchor_right = 0.634
 anchor_bottom = 0.59300005
-offset_left = 4.4759827
-offset_top = 5.523987
+offset_left = -0.13201904
+offset_top = -0.30801392
 offset_right = 0.13201904
 offset_bottom = 0.23596191
 grow_horizontal = 2
