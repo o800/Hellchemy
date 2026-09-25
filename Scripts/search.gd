@@ -13,3 +13,4 @@ func _process(delta: float) -> void:
 func _on_text_changed(new_text: String) -> void:
 	for i in $"../ScrollContainer/ListElementContainer".get_children():
 		i.visible = i.item_name.to_lower().contains(text.to_lower()) || text == ""
+ 	
